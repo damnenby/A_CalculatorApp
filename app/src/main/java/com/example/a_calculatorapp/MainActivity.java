@@ -87,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
         setClickListener(R.id.buttonClearEntry, view -> clearEntry());
         setClickListener(R.id.buttonSign, view -> changeSign());
 
+        setClickListener(R.id.buttonSin, view -> insertFunction("sin"));
+        setClickListener(R.id.buttonCos, view -> insertFunction("cos"));
+        setClickListener(R.id.buttonTan, view -> insertFunction("tan"));
+        setClickListener(R.id.buttonSqrt, view -> insertFunction("sqrt"));
+
         setClickListener(R.id.buttonMemorySave, view -> memoryStore.saveSlot1(currentExpression));
         setLongClickListener(R.id.buttonMemorySave, view -> {
             memoryStore.saveSlot2(currentExpression);
