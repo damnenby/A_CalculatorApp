@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuScientificFunctions"
+        android:title="@string/menu_scientific_functions">
+        <menu>
+            <item
+                android:id="@+id/menuSin"
+                android:title="@string/menu_sinus" />
+
+            <item
+                android:id="@+id/menuCos"
+                android:title="@string/menu_kosinus" />
+
+            <item
+                android:id="@+id/menuTan"
+                android:title="@string/menu_tangens" />
+
+            <item
+                android:id="@+id/menuSqrt"
+                android:title="@string/menu_square_root" />
+        </menu>
+    </item>
+</menu>

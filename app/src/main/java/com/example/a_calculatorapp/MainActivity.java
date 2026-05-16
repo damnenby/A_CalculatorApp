@@ -1,6 +1,7 @@
 package com.example.a_calculatorapp;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.TextView;
 
@@ -33,6 +34,12 @@ public class MainActivity extends AppCompatActivity {
         displayText = findViewById(R.id.displayText);
         registerButtonListeners();
         updateDisplay();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
     }
 
     private void registerButtonListeners() {

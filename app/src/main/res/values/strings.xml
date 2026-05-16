@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">A_CalculatorApp</string>
+    <string name="menu_scientific_functions">Wiss. Funktionen</string>
+    <string name="menu_sinus">Sinus</string>
+    <string name="menu_kosinus">Kosinus</string>
+    <string name="menu_tangens">Tangens</string>
+    <string name="menu_square_root">Quadratwurzel</string>
 </resources>
