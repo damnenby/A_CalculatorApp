@@ -2,6 +2,7 @@ package com.example.a_calculatorapp;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -40,6 +41,27 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int itemId = item.getItemId();
+
+        if (itemId == R.id.menuSin) {
+            insertFunction("sin");
+            return true;
+        } else if (itemId == R.id.menuCos) {
+            insertFunction("cos");
+            return true;
+        } else if (itemId == R.id.menuTan) {
+            insertFunction("tan");
+            return true;
+        } else if (itemId == R.id.menuSqrt) {
+            insertFunction("sqrt");
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private void registerButtonListeners() {
@@ -191,6 +213,22 @@ public class MainActivity extends AppCompatActivity {
     private void readMemory(String memoryValue) {
         currentExpression = memoryValue;
         lastInputWasResult = true;
+        updateDisplay();
+    }
+
+    private void insertFunction(String functionName) {
+        if (CalculatorEngine.ERROR.equals(currentExpression) || "0".equals(currentExpression)) {
+            currentExpression = functionName + "(";
+        } else if (endsWithOperator(currentExpression) || currentExpression.endsWith("(")) {
+            currentExpression += functionName + "(";
+        } else {
+            int numberStart = findCurrentNumberStart();
+            String expressionBeforeNumber = currentExpression.substring(0, numberStart);
+            String currentNumber = currentExpression.substring(numberStart);
+            currentExpression = expressionBeforeNumber + functionName + "(" + currentNumber + ")";
+        }
+
+        lastInputWasResult = false;
         updateDisplay();
     }
 

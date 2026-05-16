@@ -31,11 +31,34 @@ public class CalculatorEngine {
 
     private String prepareExpression(String visibleExpression) {
         // Die Anzeige nutzt gut lesbare Symbole, exp4j erwartet normale Operatoren.
-        return visibleExpression
+        String expressionText = visibleExpression
                 .replace("×", "*")
                 .replace("÷", "/")
                 .replace(",", ".")
                 .trim();
+
+        return closeOpenParentheses(expressionText);
+    }
+
+    private String closeOpenParentheses(String expressionText) {
+        int openParentheses = 0;
+        int closeParentheses = 0;
+
+        for (int i = 0; i < expressionText.length(); i++) {
+            char character = expressionText.charAt(i);
+            if (character == '(') {
+                openParentheses++;
+            } else if (character == ')') {
+                closeParentheses++;
+            }
+        }
+
+        StringBuilder completedExpression = new StringBuilder(expressionText);
+        for (int i = closeParentheses; i < openParentheses; i++) {
+            completedExpression.append(")");
+        }
+
+        return completedExpression.toString();
     }
 
     private String formatResult(double result) {
