@@ -5,8 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
+    android:fitsSystemWindows="true"
     android:orientation="horizontal"
-    android:padding="12dp"
+    android:paddingStart="12dp"
+    android:paddingTop="?attr/actionBarSize"
+    android:paddingEnd="56dp"
+    android:paddingBottom="12dp"
     tools:context=".MainActivity">
 
     <TextView
