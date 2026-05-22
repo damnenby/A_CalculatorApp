@@ -30,7 +30,6 @@ public class CalculatorEngine {
     }
 
     private String prepareExpression(String visibleExpression) {
-        // Die Anzeige nutzt gut lesbare Symbole, exp4j erwartet normale Operatoren.
         String expressionText = visibleExpression
                 .replace("×", "*")
                 .replace("÷", "/")

@@ -191,7 +191,6 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // Der Vorzeichenwechsel wird nur auf die aktuelle Zahl angewendet.
         if (currentNumber.startsWith("-")) {
             currentExpression = currentExpression.substring(0, numberStart)
                     + currentNumber.substring(1);
