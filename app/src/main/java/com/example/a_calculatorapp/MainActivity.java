@@ -10,6 +10,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String KEY_CURRENT_EXPRESSION = "currentExpression";
+    private static final String KEY_LAST_INPUT_WAS_RESULT = "lastInputWasResult";
+    private static final String KEY_MEMORY_SLOT_1 = "memorySlot1";
+    private static final String KEY_MEMORY_SLOT_2 = "memorySlot2";
+
     private final CalculatorEngine calculatorEngine = new CalculatorEngine();
     private final MemoryStore memoryStore = new MemoryStore();
 
@@ -23,8 +28,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         displayText = findViewById(R.id.displayText);
+        restoreState(savedInstanceState);
         registerButtonListeners();
         updateDisplay();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString(KEY_CURRENT_EXPRESSION, currentExpression);
+        outState.putBoolean(KEY_LAST_INPUT_WAS_RESULT, lastInputWasResult);
+        outState.putString(KEY_MEMORY_SLOT_1, memoryStore.readSlot1());
+        outState.putString(KEY_MEMORY_SLOT_2, memoryStore.readSlot2());
     }
 
     @Override
@@ -93,6 +108,17 @@ public class MainActivity extends AppCompatActivity {
             readMemory(memoryStore.readSlot2());
             return true;
         });
+    }
+
+    private void restoreState(Bundle savedInstanceState) {
+        if (savedInstanceState == null) {
+            return;
+        }
+
+        currentExpression = savedInstanceState.getString(KEY_CURRENT_EXPRESSION, "0");
+        lastInputWasResult = savedInstanceState.getBoolean(KEY_LAST_INPUT_WAS_RESULT, false);
+        memoryStore.saveSlot1(savedInstanceState.getString(KEY_MEMORY_SLOT_1, "0"));
+        memoryStore.saveSlot2(savedInstanceState.getString(KEY_MEMORY_SLOT_2, "0"));
     }
 
     private void setClickListener(int buttonId, View.OnClickListener listener) {
