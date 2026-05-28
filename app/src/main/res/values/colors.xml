@@ -2,4 +2,26 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="calc_bg">#ECEFF1</color>
+    <color name="display_bg">#FFFFFF</color>
+    <color name="display_text">#212121</color>
+
+    <color name="btn_digit_bg">#FFFFFF</color>
+    <color name="btn_digit_text">#212121</color>
+
+    <color name="btn_operator_bg">#1565C0</color>
+    <color name="btn_operator_text">#FFFFFF</color>
+
+    <color name="btn_equals_bg">#1976D2</color>
+    <color name="btn_equals_text">#FFFFFF</color>
+
+    <color name="btn_util_bg">#CFD8DC</color>
+    <color name="btn_util_text">#37474F</color>
+
+    <color name="btn_clear_bg">#EF9A9A</color>
+    <color name="btn_clear_text">#B71C1C</color>
+
+    <color name="btn_sci_bg">#E3F2FD</color>
+    <color name="btn_sci_text">#1565C0</color>
 </resources>

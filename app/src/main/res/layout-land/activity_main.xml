@@ -4,7 +4,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@color/calc_bg"
     android:fitsSystemWindows="true"
     android:orientation="horizontal"
     android:paddingStart="12dp"
@@ -19,13 +19,13 @@
         android:layout_height="match_parent"
         android:layout_marginEnd="12dp"
         android:layout_weight="1"
-        android:background="#FFFFFF"
+        android:background="@drawable/bg_display"
         android:ellipsize="start"
         android:gravity="end|center_vertical"
         android:maxLines="4"
         android:padding="16dp"
         android:text="0"
-        android:textColor="#212121"
+        android:textColor="@color/display_text"
         android:textSize="32sp" />
 
     <LinearLayout
@@ -42,6 +42,7 @@
 
             <Button
                 android:id="@+id/buttonMemoryRead"
+                style="@style/CalcButton.Util"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -50,6 +51,7 @@
 
             <Button
                 android:id="@+id/buttonMemorySave"
+                style="@style/CalcButton.Util"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -58,6 +60,7 @@
 
             <Button
                 android:id="@+id/buttonClear"
+                style="@style/CalcButton.Clear"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -66,6 +69,7 @@
 
             <Button
                 android:id="@+id/buttonClearEntry"
+                style="@style/CalcButton.Clear"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -81,6 +85,7 @@
 
             <Button
                 android:id="@+id/buttonSeven"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -89,6 +94,7 @@
 
             <Button
                 android:id="@+id/buttonEight"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -97,6 +103,7 @@
 
             <Button
                 android:id="@+id/buttonNine"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -105,6 +112,7 @@
 
             <Button
                 android:id="@+id/buttonDivide"
+                style="@style/CalcButton.Operator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -120,6 +128,7 @@
 
             <Button
                 android:id="@+id/buttonFour"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -128,6 +137,7 @@
 
             <Button
                 android:id="@+id/buttonFive"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -136,6 +146,7 @@
 
             <Button
                 android:id="@+id/buttonSix"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -144,6 +155,7 @@
 
             <Button
                 android:id="@+id/buttonMultiply"
+                style="@style/CalcButton.Operator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -159,6 +171,7 @@
 
             <Button
                 android:id="@+id/buttonOne"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -167,6 +180,7 @@
 
             <Button
                 android:id="@+id/buttonTwo"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -175,6 +189,7 @@
 
             <Button
                 android:id="@+id/buttonThree"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -183,6 +198,7 @@
 
             <Button
                 android:id="@+id/buttonSubtract"
+                style="@style/CalcButton.Operator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -198,6 +214,7 @@
 
             <Button
                 android:id="@+id/buttonSign"
+                style="@style/CalcButton.Util"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -206,6 +223,7 @@
 
             <Button
                 android:id="@+id/buttonZero"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -214,6 +232,7 @@
 
             <Button
                 android:id="@+id/buttonDecimal"
+                style="@style/CalcButton.Digit"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -222,6 +241,7 @@
 
             <Button
                 android:id="@+id/buttonAdd"
+                style="@style/CalcButton.Operator"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
@@ -231,6 +251,7 @@
 
         <Button
             android:id="@+id/buttonEquals"
+            style="@style/CalcButton.Equals"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_margin="3dp"
